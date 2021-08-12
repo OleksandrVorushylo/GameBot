@@ -17,10 +17,10 @@ function startBot() {
     if (questionNumber === randomNumber) {
       alert('Поздравляю, Вы угадали!!!');
       return getQuestion();
-    } else if (questionNumber < randomNumber) {
+    } else if (questionNumber > randomNumber) {
       alert('Загаданное число меньше');
       return getQuestion();        
-    } else if (questionNumber > randomNumber) {
+    } else if (questionNumber < randomNumber) {
         alert('Загаданное число больше');
         return getQuestion();
     } else if (!isNaN(questionNumber)) {
