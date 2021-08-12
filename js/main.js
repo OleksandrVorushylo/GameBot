@@ -16,7 +16,7 @@ function startBot() {
     const questionNumber = +prompt('Угадай число от 1 до 100');
     if (questionNumber === randomNumber) {
       alert('Поздравляю, Вы угадали!!!');
-      return getQuestion();
+      return location.reload();
     } else if (questionNumber > randomNumber) {
       alert('Загаданное число меньше');
       return getQuestion();        
