@@ -13,21 +13,21 @@ function startBot() {
   const randomNumber = getRandomNumber();
   console.log('randomNumber: ', randomNumber);
   function getQuestion() {
-    const questionNumber = +prompt('Угадай число от 1 до 100');
-    if (questionNumber === randomNumber) {
+    const questionNumber = prompt('Угадай число от 1 до 100');
+    if (questionNumber === null) {
+      alert('Игра окончена');
+      return getQuestion();
+    } else if (parseInt(questionNumber) === randomNumber) {
       alert('Поздравляю, Вы угадали!!!');
       return location.reload();
-    } else if (questionNumber > randomNumber) {
+    } else if (parseInt(questionNumber) > randomNumber) {
       alert('Загаданное число меньше');
       return getQuestion();        
-    } else if (questionNumber < randomNumber) {
-        alert('Загаданное число больше');
-        return getQuestion();
+    } else if (parseInt(questionNumber) < randomNumber) {
+      alert('Загаданное число больше');
+      return getQuestion();
     } else if (!isNaN(questionNumber)) {
       alert('Введи число!');
-      return getQuestion();
-    } else if (questionNumber === null) {
-      alert('Игра окончена');
       return getQuestion();
     } 
   }
