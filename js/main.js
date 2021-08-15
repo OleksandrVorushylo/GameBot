@@ -15,8 +15,8 @@ function startBot() {
   function getQuestion() {
     const questionNumber = prompt('Угадай число от 1 до 100');
     if (questionNumber === null) {
-      alert('Игра окончена');
-      return getQuestion();
+      
+      return alert('Игра окончена');
     } else if (parseInt(questionNumber) === randomNumber) {
       alert('Поздравляю, Вы угадали!!!');
       return location.reload();
